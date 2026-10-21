@@ -7,23 +7,26 @@ body:
     attributes:
       value: |
         Give a brief overview of the improvement you'd like to see. Include any relevant details such as the current state, desired state and any alternatives to consider if applicable.
-  - type: checkboxes
+  - type: dropdown
     id: improvement_type
     attributes:
       label: Type of Improvement
       description: Select all categories that apply.
+      multiple: false
       options:
-        - label: New feature / Capability
-        - label: Enhancement to an existing feature
-        - label: Usability / Accessibility
-        - label: Performance / Scalability
-        - label: Reliability / Observability
-        - label: Refactoring / Code quality / Maintainability
-        - label: Developer experience / Tooling
-        - label: Test coverage / Quality assurance
-        - label: Documentation / Examples
-        - label: Dependencies / Build / Deployment
-        - label: Other
+        - New feature / Capability
+        - Enhancement to an existing feature
+        - Usability / Accessibility
+        - Performance / Scalability
+        - Reliability / Observability
+        - Refactoring / Code quality / Maintainability
+        - Developer experience / Tooling
+        - Test coverage / Quality assurance
+        - Documentation / Examples
+        - Dependencies / Build / Deployment
+        - Other
+      validations:
+        required: true
 
   - type: checkboxes
     id: area
@@ -42,6 +45,8 @@ body:
         - label: Deployment / Infrastructure
         - label: Repository-wide
         - label: Other / Unsure
+      validations:
+        required: true
 
   - type: textarea
     id: motivation
