@@ -1,60 +1,68 @@
 name: "Improvement Proposal"
-description: Suggest an improvement to any part of the Komura repository.
+description: "Suggest an improvement to any part of the Komura repository."
 title: "[IMPROVEMENT] "
-labels: ["improvement"]
+labels:
+  - improvement
+
 body:
   - type: markdown
     attributes:
       value: |
-        Give a brief overview of the improvement you'd like to see. Include any relevant details such as the current state, desired state and any alternatives to consider if applicable.
+        Describe the improvement you would like to propose.
+        Explain the current situation, the proposed change, and its expected benefits.
+        Provide relevant details where applicable.
+
   - type: dropdown
     id: improvement_type
     attributes:
       label: Type of Improvement
-      description: Select all categories that apply.
+      description: Select the category that best describes your proposal.
       multiple: false
       options:
-        - New feature / Capability
-        - Enhancement to an existing feature
-        - Usability / Accessibility
-        - Performance / Scalability
-        - Reliability / Observability
-        - Refactoring / Code quality / Maintainability
-        - Developer experience / Tooling
-        - Test coverage / Quality assurance
-        - Documentation / Examples
-        - Dependencies / Build / Deployment
-        - Other
-      validations:
-        required: true
+        - "New Feature / Capability"
+        - "Existing Feature Enhancement"
+        - "Usability / Accessibility"
+        - "Performance / Scalability"
+        - "Reliability / Observability"
+        - "Refactoring / Code Quality / Maintainability"
+        - "Developer Experience / Tooling"
+        - "Test Coverage / Quality Assurance"
+        - "Documentation / Examples"
+        - "Dependencies / Build / Deployment"
+        - "Other"
+    validations:
+      required: true
 
-  - type: checkboxes
+  - type: dropdown
     id: area
     attributes:
       label: Area to Improve
-      description: Select all parts of the repository this proposal would improve.
+      description: Select all areas of the repository affected by this proposal.
+      multiple: true
       options:
-        - label: Frontend Portal (frontend/komura-portal)
-        - label: Backend Services (backend)
-        - label: Agent SDK (agent-sdk)
-        - label: Shared Libraries / Analyzers (libs)
-        - label: Agents / Integrations / Examples (agents, examples)
-        - label: Applications / Tools / Demos (apps, tools, demo)
-        - label: Documentation / Onboarding
-        - label: Testing / CI / Development Tooling
-        - label: Deployment / Infrastructure
-        - label: Repository-wide
-        - label: Other / Unsure
-      validations:
-        required: true
+        - "Frontend Portal (frontend/komura-portal)"
+        - "Backend Services (backend)"
+        - "Agent SDK (agent-sdk)"
+        - "Shared Libraries / Analyzers (libs)"
+        - "Agents / Integrations / Examples (agents, examples)"
+        - "Applications / Tools / Demos (apps, tools, demo)"
+        - "Documentation / Onboarding"
+        - "Testing / CI / Development Tooling"
+        - "Deployment / Infrastructure"
+        - "Repository-wide"
+        - "Other / Unsure"
+    validations:
+      required: true
 
   - type: textarea
     id: motivation
     attributes:
       label: Motivation / Opportunity
+      description: Explain the problem or opportunity motivating this proposal.
       placeholder: |
-        Explain why this improvement is useful and who would benefit.
-        Describe the current approach and the opportunity to improve it or introduce a new capability.
+        What is the current situation?
+        Why is this improvement needed?
+        Who would benefit from this change?
     validations:
       required: true
 
@@ -62,32 +70,42 @@ body:
     id: proposal
     attributes:
       label: Proposed Improvement
+      description: Describe the change you would like to introduce.
       placeholder: |
-        Describe the capability, design, or workflow you propose.
-        Explain what would change, its scope, and how it would improve the project.
+        What should be improved or added?
+        How should the proposed change work?
+        What benefits or outcomes are expected?
     validations:
       required: true
 
   - type: textarea
     id: frontend_visuals
     attributes:
-      label: Proposed UI / Design References (For Frontend Improvements)
+      label: UI / Design References (Optional)
+      description: Include mockups, screenshots, or design references if the proposal involves UI changes.
       placeholder: |
-        Drag and drop or paste mockups, wireframes, or annotated images showing the proposed UI.
-        Explain what the design improves. Include a current screenshot for comparison where useful.
-        Hide sensitive data. Leave blank if no UI change is proposed.
+        Attach relevant mockups, wireframes, or screenshots.
+        Explain the proposed UI changes and their benefits.
+        Include before/after comparisons where useful.
+        Do not include sensitive information.
+
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives Considered (Optional)
+      description: Describe other approaches considered, if any.
       placeholder: |
-        Describe other approaches you considered and their tradeoffs.
-        Explain why you prefer the proposed improvement, or leave blank if no alternatives were considered.
+        What alternative approaches were considered?
+        What are their advantages or disadvantages?
+        Why is the proposed approach preferred?
+
   - type: textarea
     id: implementation
     attributes:
       label: Implementation Notes / Compatibility (Optional)
+      description: Include technical considerations or implementation suggestions, if known.
       placeholder: |
-        Share suggested implementation steps, dependencies, or risks if known.
-        Note compatibility concerns, API changes, migrations, and testing or documentation updates.
-        Leave blank if you do not have implementation details yet.
+        Suggested implementation approach or steps.
+        Dependencies, limitations, or potential risks.
+        Compatibility concerns, API changes, or migrations.
+        Testing and documentation considerations.
